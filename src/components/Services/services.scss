@@ -1,0 +1,275 @@
+.mot__services{
+
+    width: 100%;
+    overflow: clip;
+    overflow-x: auto;
+    gap: 13px;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none; 
+      }
+
+    .motServices__cards{
+
+        height: 450px;
+        width: 450px;
+        overflow: hidden;
+        background-color: #eee;
+        position: relative;
+        flex-shrink: 0;
+        
+        &.index__card{
+
+            background-color: #108A00;
+            padding: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            width: 500px;
+
+            .card__title{
+
+                font-size: 32px;
+                line-height: 39px;
+                color: #fff;
+                font-weight: 600;
+                width: 70%;
+                margin-top: 40px;
+
+                span{
+                    font-style: italic;
+                    font-weight: 500;
+                }
+            }
+
+            .ref{
+                font-size: 13px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                
+                a{
+                    color: #fff;
+                    font-weight: 600;
+                }
+            }
+
+            .arrowOut{
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 40px;
+                background-color: #fff;
+                height: 50px;
+                width: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        
+
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            transition: all 7s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        &:hover{
+            img{
+                scale: 1.3;
+            }
+
+            .card__info{
+                height: 100%;
+
+                p, a{
+                    display: flex;
+                }
+            }
+        }
+
+        .card__info{
+
+            background-color: rgba($color: #1D1E20, $alpha: .8);
+            position: absolute;
+            z-index: 9;
+            bottom: 0;
+            padding: 40px;
+            color: #fff;
+            width: 100%;
+            height: 123px;
+            transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+            display: flex;
+            flex-direction: column;
+
+            .info__topic{
+                font-size: 21px;
+                font-weight: 700;
+                width: 70%;
+
+                &.lastie{
+                    width: 90%;
+                }
+            }
+
+            p{
+                margin-top: 25px;
+                font-size: 17px;
+                width: 90%;
+                line-height: 24px;
+                font-weight: 500;
+            }
+
+            a{
+                background: #108A00;
+                width: max-content;
+                bottom: 40px;
+                margin-top: auto;
+                padding: 18px 23px;
+                color: #fff;
+                font-weight: 600;
+            }
+        }
+       
+
+    }
+
+    .mob{
+        display: none !important;
+      }
+
+}
+
+@media(max-width : 1000px){
+
+    .mot__services{
+        
+        flex-wrap: wrap;
+        margin-top: 30px;
+
+        .motServices__cards{
+            width: calc(50% - 10px);
+
+            &.index__card{
+
+                width: calc(50% - 10px);
+                padding: 40px;
+                
+                .card__title{
+                    width: 100%;
+                    margin-top: 100px;
+                }
+
+
+            }
+        }
+
+    }
+
+}
+
+@media(max-width : 768px){
+
+    .mot__services{
+
+        .desk{
+            display: none;
+        }
+
+        .mob{
+            display: block !important;
+        }
+
+        .motServices__cards{
+            
+
+            .card__info{
+                padding: 20px;
+                height: max-content;
+
+                .mob{
+                    margin-top: 20px !important;
+                }
+                
+                a{
+                    margin-top: 30px;
+                }
+
+                .info__topic{
+                    font-size: 18px;
+                    width: 100%;
+                }
+            }
+
+            &.index__card{
+
+                padding: 40px;
+                
+                .card__title{
+                    width: 100%;
+                    margin-top: 100px;
+                }
+
+
+            }
+
+            &:hover{
+                img{
+                    scale: 1;
+                }
+    
+                .card__info{
+                    height: max-content;
+    
+                    p{
+                        display: none;
+                    }
+
+                    .mob{
+                        display: block;
+                    }
+
+                }
+            }
+        }
+
+    }
+
+}
+
+@media(max-width : 600px){
+
+    .mot__services{
+
+        justify-content: center;
+
+        .motServices__cards{
+            
+            width: 90%;
+            height: 400px;
+
+            &.index__card{
+                width: 90%;
+                height: 400px;
+            }
+
+            .card__info{
+                .mob{
+                    font-size: 15px;
+                    line-height: 22px;
+                }
+
+                a{
+                    padding: 15px 20px;
+                }
+            }
+            
+        }
+
+    }
+
+}
